@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+    margin: 0px;
+    padding: 0px;
+}
+ul{
+    list-style: none;
+}
+.container{
+    position: relative;
+    overflow: hidden;
+}
+.top{
+    margin: 10px 0px;
+    padding: 5px;
+    float: left;
+}
+.sortBtn{
+    width: 100px;
+    height: 62px;
+    line-height: 60px;
+    margin-right: 5px;
+    padding-left: 20px;
+    color: black;
+    background-color: white;
+    border: 1px solid #999999;
+    cursor: pointer;
+    float:left;
+}
+.sortBtn{
+    background-repeat: no-repeat;
+    background-position: 70px center;
+    background-size: 40px 30px;
+}
+.sortBtn:nth-child(1){
+    background-image: url("img/funnel.png");
+}
+.sortBtn:nth-child(2){
+    background-image: url("img/down.png");
+}
+.sortBtn:nth-child(3){
+    background-image: url("img/up.png");
+}
+.sortBtn:nth-child(1):hover{
+    background-image: url("img/funnelRed.png");
+}
+.sortBtn:nth-child(2):hover{
+    background-image: url("img/downRed.png");
+}
+.sortBtn:nth-child(3):hover{
+    background-image: url("img/upRed.png");
+}
+.sortBtn:hover{
+    background-color: #e8e8e8;
+    color: red;
+}
+.sortBtn1:nth-child(1){
+    background-color: #e8e8e8;
+    background-image: url("img/funnelRed.png");
+    color: red;
+}
+.sortBtn2:nth-child(2){
+    background-image: url("img/downRed.png");
+    background-color: #e8e8e8;
+    color: red;
+}
+.sortBtn3:nth-child(3){
+    background-image: url("img/upRed.png");
+    background-color: #e8e8e8;
+    color: red;
+}
+.content{
+    margin: 5px auto;
+    clear: both;
+    overflow: hidden;
+}
+.item{
+    width: 300px;
+    height: 500px;
+    border: 1px solid #ededed;
+    margin-right: 10px;
+    float: left;
+    overflow: hidden;
+    padding: 10px;
+}
+.item>a{
+    text-decoration: none;
+    color: black;
+}
+.imgbox img{
+    width: 290px;
+    height: 290px;
+}
+.priceInfo{
+    height: 30px;
+    line-height: 30px;
+    margin-top: 10px;
+}
+.price{
+    float: left;
+}
+.deal{
+    float: right;
+    color: #888888;
+}
+.title{
+    margin-top: 15px;
+}
+.title>a{
+    text-decoration: none;
+    color: black;
+}
+.title>a:hover{
+    text-decoration: underline;
+    color: indianred;
+}
+.business{
+    height: 30px;
+    line-height: 30px;
+    margin-top: 10px;
+}
+.shop{
+    float: left;
+}
+.shop>a{
+    color: #888888;
+}
+.shop>a:hover{
+    color: #ff4040;
+}
+.location{
+    float: right;
+}
+    </style>
+</head>
+
+<body>
+    <div class="containor" id="containor">
+        <div class="top">
+            <ul>
+                <li class="sortBtn" title="按系统默认排序" type="">默认</li>
+                <li class="sortBtn" title="按价格降序">价格</li>
+                <li class="sortBtn" title="按价格升序">价格</li>
+            </ul>
+        </div>
+        <div class="content">
+            <div class="item" >
+                <a href="#">
+                    <div class="imgbox">
+                        <img src="img/good1.png" alt="">
+                    </div>
+                    <div class="priceInfo">
+                        <div class="price"><span>¥</span><strong>199.00</strong></div>
+                        <div class="deal">111人付款</div>
+                    </div>
+                    <div class="title">
+                        <a href="#">
+                            <span>花花公子西服男士套装秋季韩版潮流修身新郎结婚小</span>
+                        </a>
+                    </div>
+                    <div class="business">
+                        <div class="shop"><a href="#">服装店</a></div>
+                        <div class="location">广东 深圳</div>
+                    </div>
+                </a>
+            </div>
+            <div class="item" >
+                <a href="#">
+                    <div class="imgbox">
+                        <img src="img/good2.png" alt="">
+                    </div>
+                    <div class="priceInfo">
+                        <div class="price"><span>¥</span><strong>119.00</strong></div>
+                        <div class="deal">90人付款</div>
+                    </div>
+                    <div class="title">
+                        <a href="#">
+                            <span>花花公子2019男士夹克衫中年爸爸装秋装中老年立领</span>
+                        </a>
+                    </div>
+                    <div class="business">
+                        <div class="shop"><a href="#">花花公子</a></div>
+                        <div class="location">广东 广州</div>
+                    </div>
+                </a>
+     
+            </div>
+            <div class="item" >
+                <a href="#">
+                    <div class="imgbox">
+                        <img src="img/good2.png" alt="">
+                    </div>
+                    <div class="priceInfo">
+                        <div class="price"><span>¥</span><strong>129.50</strong></div>
+                        <div class="deal">190人付款</div>
+                    </div>
+                    <div class="title">
+                        <a href="#">
+                            <span>花花公子西服套装男士修身帅气结婚新郎礼服新款春</span>
+                        </a>
+                    </div>
+                    <div class="business">
+                        <div class="shop"><a href="#">花花公子</a></div>
+                        <div class="location">广东 梅州</div>
+                    </div>
+                </a>
+     
+            </div>
+            <div class="item" >
+                <a href="#">
+                    <div class="imgbox">
+                        <img src="img/good1.png" alt="">
+                    </div>
+                    <div class="priceInfo">
+                        <div class="price"><span>¥</span><strong>219.00</strong></div>
+                        <div class="deal">1190人付款</div>
+                    </div>
+                    <div class="title">
+                        <a href="#">
+                            <span>花花公子男士休闲西服修身韩版潮流小西装男春秋季</span>
+                        </a>
+                    </div>
+                    <div class="business">
+                        <div class="shop"><a href="#">花花公子</a></div>
+                        <div class="location">广东 惠州</div>
+                    </div>
+                </a>
+     
+            </div>
+            <div class="item" >
+                <a href="#">
+                    <div class="imgbox">
+                        <img src="img/good2.png" alt="">
+                    </div>
+                    <div class="priceInfo">
+                        <div class="price"><span>¥</span><strong>313.50</strong></div>
+                        <div class="deal">467人付款</div>
+                    </div>
+                    <div class="title">
+                        <a href="#">
+                            <span>2019年男士最新款</span>
+                        </a>
+                    </div>
+                    <div class="business">
+                        <div class="shop"><a href="#">阿迪达斯你</a></div>
+                        <div class="location">广东 广州</div>
+                    </div>
+                </a>
+     
+            </div>
+            <div class="item" >
+                <a href="#">
+                    <div class="imgbox">
+                        <img src="img/good1.png" alt="">
+                    </div>
+                    <div class="priceInfo">
+                        <div class="price"><span>¥</span><strong>313.00</strong></div>
+                        <div class="deal">210人付款</div>
+                    </div>
+                    <div class="title">
+                        <a href="#">
+                            <span>1024</span>
+                        </a>
+                    </div>
+                    <div class="business">
+                        <div class="shop"><a href="#">1024</a></div>
+                        <div class="location">上海</div>
+                    </div>
+                </a>
+     
+            </div>
+            <div class="item" >
+                <a href="#">
+                    <div class="imgbox">
+                        <img src="img/good2.png" alt="">
+                    </div>
+                    <div class="priceInfo">
+                        <div class="price"><span>¥</span><strong>44.80</strong></div>
+                        <div class="deal">23人付款</div>
+                    </div>
+                    <div class="title">
+                        <a href="#">
+                            <span>2048</span>
+                        </a>
+                    </div>
+                    <div class="business">
+                        <div class="shop"><a href="#">2048</a></div>
+                        <div class="location">重庆</div>
+                    </div>
+                </a>
+     
+            </div>
+            <div class="item" >
+                <a href="#">
+                    <div class="imgbox">
+                        <img src="img/good2.png" alt="">
+                    </div>
+                    <div class="priceInfo">
+                        <div class="price"><span>¥</span><strong>461.00</strong></div>
+                        <div class="deal">361人付款</div>
+                    </div>
+                    <div class="title">
+                        <a href="#">
+                            <span>4096</span>
+                        </a>
+                    </div>
+                    <div class="business">
+                        <div class="shop"><a href="#">4096</a></div>
+                        <div class="location">北京</div>
+                    </div>
+                </a>
+     
+            </div>
+            <div class="item" >
+                <a href="#">
+                    <div class="imgbox">
+                        <img src="img/good2.png" alt="">
+                    </div>
+                    <div class="priceInfo">
+                        <div class="price"><span>¥</span><strong>133.30</strong></div>
+                        <div class="deal">333人付款</div>
+                    </div>
+                    <div class="title">
+                        <a href="#">
+                            <span>8192</span>
+                        </a>
+                    </div>
+                    <div class="business">
+                        <div class="shop"><a href="#">8192</a></div>
+                        <div class="location">天津</div>
+                    </div>
+                </a>
+     
+            </div>
+            <div class="item" >
+                <a href="#">
+                    <div class="imgbox">
+                        <img src="img/good2.png" alt="">
+                    </div>
+                    <div class="priceInfo">
+                        <div class="price"><span>¥</span><strong>111.10</strong></div>
+                        <div class="deal">111人付款</div>
+                    </div>
+                    <div class="title">
+                        <a href="#">
+                            <span>16384</span>
+                        </a>
+                    </div>
+                    <div class="business">
+                        <div class="shop"><a href="#">16384</a></div>
+                        <div class="location">广东 广州</div>
+                    </div>
+                </a>
+     
+            </div>
+        </div>
+    </div>
+</body>
+<script src="js/jquery-2.1.4.js"></script>
+<script>
+    $(document).ready(function () {
+    let array = [];
+    let defaultArray = [];
+    let prev;
+    let after;
+    //将商品列表保存到数组当中，一个数用来排序的数组，一个数默认的数组
+    $('.item').each(function (index) {
+        array[index] = $(this);
+        defaultArray[index] = $(this);
+    })
+    //给排序按钮添加点击事件
+    $('.top>ul>li').each(function (index) {
+        $(this).click(function () {
+            //排序按钮的点击样式
+            removeAllClass();
+            $(this).addClass(`sortBtn${index+1}`);
+            //默认排序
+            if(index==0){
+                $('.content').empty();
+                for(let i=0;i<defaultArray.length;i++){
+                    $('.content').append(defaultArray[i])
+                }
+                return;
+            }
+            //降序排序
+            else if(index==1){
+                for(let i=0;i<array.length;i++){
+                    for (let j=0;j<array.length-i-1;j++){
+                        prev = array[j].find('.price').children('strong').html();
+                        after = array[j+1].find('.price').children('strong').html();
+                        if(parseFloat(prev) < parseFloat(after)){
+                            console.log(prev,after);
+                            let temp = array[j+1];
+                            array[j+1]=array[j];
+                            array[j]=temp;
+                        }
+                    }
+                }
+            }
+            //升序排序
+            else if(index==2){
+                for(let i=0;i<array.length;i++){
+                    for (let j=0;j<array.length-i-1;j++){
+                        prev = parseFloat(array[j].find('.price').children('strong').html()).toFixed(2);
+                        after = parseFloat(array[j+1].find('.price').children('strong').html()).toFixed(2);
+                        if(parseFloat(prev) > parseFloat(after)){
+                            let temp = array[j+1];
+                            array[j+1]=array[j];
+                            array[j]=temp;
+                        }
+                    }
+                }
+            }
+            //清空原本列表，将排序的商品数组添加上去
+            $('.content').empty();
+            for(let i=0;i<array.length;i++){
+                $('.content').append(array[i])
+            }
+        })
+    });
+})
+//清除排序按钮的样式
+function removeAllClass() {
+    $('.sortBtn').removeClass(`sortBtn1`);
+    $('.sortBtn').removeClass(`sortBtn2`);
+    $('.sortBtn').removeClass(`sortBtn3`);
+}
+
+
+</script>
+
+</html>

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+	margin:0;
+	padding:0;
+}
+a {
+	text-decoration:none;
+}
+li {
+	list-style:none;
+}
+#wrap {
+	position:relative;
+	width:700px;
+	height:400px;
+	margin:50px auto;
+	overflow:hidden;
+}
+#wrap .pic {
+	position:absolute;
+	top:0;
+	left:0;
+	width:1000%;
+	height:100%;
+}
+.pic li {
+	float:left;
+	width:700px;
+	height:400px;
+	color:#fff;
+	font-size:80px;
+	text-align:center;
+	line-height:400px;
+}
+.pic li img {
+	border:0;
+	vertical-align:middle;
+	/*width:700px;
+	height:400px;
+	*/
+}
+.tab {
+	position:absolute;
+	bottom:20px;
+	left:50%;
+	margin-left:-100px;
+	height:30px;
+	padding-left:10px;
+	background:rgba(0,0,0,.2);
+	border-radius:15px;
+	transition:0.5s;
+}
+.tab:hover {
+	background:rgba(0,0,0,.5);
+	transform:scale(1.2);
+}
+.tab li {
+	width:20px;
+	height:20px;
+	float:left;
+	background:#fff;
+	border-radius:50%;
+	margin:5px 10px 0 0;
+	/*opacity:0.35;
+	*/
+			cursor:pointer;
+}
+.tab li.on {
+	/*position:absolute;
+	top:0;
+	*/
+			background:#f60;
+	/*opacity:1;
+	z-index:99;
+	*/
+}
+p {
+	position:absolute;
+	top:50%;
+	margin-top:-30px;
+	width:30px;
+	background:rgba(0,0,0,0.2);
+	text-align:center;
+	font-size:28px;
+	font-weight:bold;
+	line-height:60px;
+	color:#fff;
+	cursor:pointer;
+}
+p:hover {
+	background:rgba(0,0,0,0.5);
+}
+.prev {
+	left:0;
+}
+.next {
+	right:0;
+}
+    
+    
+    </style>
+</head>
+
+<body>
+    <div id="wrap">
+        <ul class="pic">
+            <li style="background:purple">1
+                <a href="#"><img src="" alt=""></a>
+            </li>
+            <li style="background:deeppink">2
+                <a href="#"><img src="" alt=""></a>
+            </li>
+            <li style="background:blue">3
+                <a href="#"><img src="" alt=""></a>
+            </li>
+            <li style="background:#00ae9d">4
+                <a href="#"><img src="" alt=""></a>
+            </li>
+        </ul>
+        <ul class="tab">
+
+            <li class="on"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <p href="#" class="prev">
+            &lt;</p>
+        <p href="#" class="next">&gt;</p>
+    </div>
+
+<script src="js/jquery-2.1.4.js"></script>
+<script>
+    $(function() {
+    var $wrap = $('#wrap'),
+        $picUl = $('.pic'),
+        $tabLi = $('.tab li'),
+        $prev = $('.prev'),
+        $next = $('.next'),
+        widLi = $picUl.children().eq(0).width(),
+        len = $tabLi.length,
+        idx = 0,
+        timer = null;
+
+    //get first; set all
+    $tabLi.click(function() {
+        $(this).addClass("on").siblings().removeClass("on")
+        idx = $(this).index();
+
+        $picUl.animate({
+            left: -idx * widLi
+        }, 500)
+    })
+    // 点击下一张
+    $next.click(function() {
+        idx++;
+        idx %= len; // 序号为小圆按钮的长度时到达第一张
+        $tabLi.eq(idx).addClass("on").siblings().removeClass("on")
+        $picUl.animate({
+            left: -idx * widLi
+        }, 500)
+    })
+
+    $prev.click(function() {
+        idx--;
+        if (idx < 0) {
+            idx = len - 1
+        };
+
+        $tabLi.eq(idx).addClass("on").siblings().removeClass("on")
+        $picUl.animate({
+            left: -idx * widLi
+        }, 500)
+    })
+
+    // 自动轮播
+    auto();
+
+    function auto() {
+        timer = setInterval(function() {
+            $next.trigger("click") // 触发click
+        }, 3000)
+    }
+
+    $wrap.hover(function() {
+        clearInterval(timer);
+    }, function() {
+        auto();
+    })
+})
+
+</script>  
+</body>
+
+</html>
